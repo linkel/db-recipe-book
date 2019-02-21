@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
       tbl.increments();
       tbl.string('recipe_name').notNullable().unique();
       tbl.integer('dish_id').unsigned()
-      table.foreign('dish_id').references('dishes.id');
+      tbl.foreign('dish_id').references('dishes.id');
   })
 };
 

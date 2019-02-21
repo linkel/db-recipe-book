@@ -13,8 +13,10 @@
 2. yarn add knex sqlite3 express helmet path cors
 3. knex init (to make knexfile)
 4. point the knexfile to the database directory, and add useNullAsDefault: true, for the sqlite3 dev environment
-5. Set up migrations by means of the following: knex migrate:make add_dishes_table, knex migrate:make add_recipes_table, knex migrate:make add_ingredients_table
-6. 
+5. Set up migrations by means of the following: knex migrate:make add_dishes_table, knex migrate:make add_recipes_table, knex migrate:make add_ingredients_table knex migrate:make add_instructions_table
+6. Set up seeds: knex seed:make 001-dishes and etc
+7. Run knex migrate:latest and knex seed:run to create the tables and to seed them with data.
+8. 
 
 
 ## Assignment
