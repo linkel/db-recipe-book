@@ -16,13 +16,10 @@ function getDishes() {
 }
 
 function getDish(id) { // include list of related recipes
-  let dishName = db('dishes').where("id",id).first()
-  let related_recipes = db('recipes').where("dish_id", id)
-  let obj = { 
-      dish: dishName, 
-      related_recipes: related_recipes
-    }
-  return obj;
+  return db('dishes').where("dishes.id",id)
+  .join('recipes', 'recipes.dish_id', 'dishes.id')
+  .select("dishes.id", "dishes.dish_name", "recipes.recipe_name")
+
 }
 
 function addDish(dish) {
